@@ -4,7 +4,7 @@
     //  var pageNow = 1;   // 当前页码
     //  var points = null; // 页码数
 
-    
+
     //- 设置html标签font-size
     var _root = document.documentElement,
         resizeEvent = 'orientationchange' in window ? 'orientationchange' : 'resize',
@@ -111,12 +111,12 @@
                 var deltaY = touch.pageY - startY;
 
                 var translate = initialPos + deltaY; // 当前需要移动到的位置
-                // 如果translate>0 或 < maxHeight,则表示页面超出边界
+                //如果translate>0 或 < maxHeight,则表示页面超出边界
                 if (translate > 0) {
                     translate = 0;
                 }
-                if (translate < maxHeight) {
-                    translate = maxHeight - pageHeight;
+                if (translate < maxHeight + pageHeight) {
+                    translate = maxHeight + pageHeight;
                 }
                 deltaY = translate - initialPos;
                 this.transform.call(viewport, translate);
@@ -137,17 +137,17 @@
                     // 使用动画过渡让页面滑动到最终的位置
                     viewport.style.webkitTransition = '0.3s ease -webkit-transform';
                     if (deltaT < 300) { // 如果停留时间小于300ms,则认为是快速滑动，无论滑动距离是多少，都停留到下一页
-                        if (currentPosition === 0 && translate === 0) {
+                        if (currentPosition === 0 && translate === 0 && moveLength === 0) {
                             return;
                         }
                         translate = direction === 'bottom' ?
-                            currentPosition - (pageHeight + moveLength)
-                            : currentPosition + pageHeight - moveLength;
+                            currentPosition + moveLength
+                            : currentPosition + moveLength;
                         //如果最终位置超过边界位置，则停留在边界位置
                         // 上边界
                         translate = translate > 0 ? 0 : translate;
                         // 下边界
-                        translate = translate < maxHeight ? maxHeight - pageHeight : translate;
+                        translate = translate < maxHeight + pageHeight ? maxHeight + pageHeight : translate;
                     }
                     else {
                         //如果滑动距离小于屏幕的50 %，则退回到上一页
@@ -163,17 +163,17 @@
                         // }
 
 
-                        if (currentPosition === 0 && translate === 0) {
+                        if (currentPosition === 0 && translate === 0 && moveLength === 0) {
                             return;
                         }
                         translate = direction === 'bottom' ?
-                            currentPosition - (pageHeight + moveLength)
-                            : currentPosition + pageHeight - moveLength;
+                            currentPosition + moveLength
+                            : currentPosition + moveLength;
                         //如果最终位置超过边界位置，则停留在边界位置
                         // 上边界
                         translate = translate > 0 ? 0 : translate;
                         // 下边界
-                        translate = translate < maxHeight ? maxHeight - pageHeight : translate;
+                        translate = translate < maxHeight + pageHeight ? maxHeight + pageHeight : translate;
                     }
 
                     // 执行滑动，让页面完整的显示到屏幕上
