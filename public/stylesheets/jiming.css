@@ -32,8 +32,14 @@ body {
     /* -webkit-box-flex: 1; */
     width: 100%;
     /* margin: 0 5px; */
-    height: 5147px;
-    background-size: cover !important;
+    /* height: 5147px;
+    background-size: cover !important; */
+    height: 2833px;
+    background-size: 100% 100% !important;
+}
+
+.gif{
+    position: absolute;
 }
 
 .pagenumber {
