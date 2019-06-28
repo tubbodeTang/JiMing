@@ -156,11 +156,11 @@
 
                 // //对话位置
                 this.showConversation(1, pageHeight)
-                this.showConversation(2, pageHeight)
+                // this.showConversation(2, pageHeight)
                 this.showConversation(3, pageHeight)
-                this.showConversation(4, pageHeight)
+                // this.showConversation(4, pageHeight)
                 this.showConversation(5, pageHeight)
-                this.showConversation(6, pageHeight)
+                // this.showConversation(6, pageHeight)
 
             }.bind(this), false);
 
