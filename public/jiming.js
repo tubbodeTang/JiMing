@@ -5,7 +5,7 @@
     //  var points = null; // 页码数
 
     var isFirstRender = [true, true, true, true, true, true];
-    var setPosition = [1995, 2145, 4828, 4958, 7661, 7811];
+    var setPosition = [1995, 2145, 4828, 4958, 7611, 7761];
 
 
     //- 设置html标签font-size
@@ -155,12 +155,12 @@
                 }
 
                 // //对话位置
-                // this.showConversation(1, pageHeight)
-                // this.showConversation(2, pageHeight)
-                // this.showConversation(3, pageHeight)
-                // this.showConversation(4, pageHeight)
-                // this.showConversation(5, pageHeight)
-                // this.showConversation(6, pageHeight)
+                this.showConversation(1, pageHeight)
+                this.showConversation(2, pageHeight)
+                this.showConversation(3, pageHeight)
+                this.showConversation(4, pageHeight)
+                this.showConversation(5, pageHeight)
+                this.showConversation(6, pageHeight)
 
             }.bind(this), false);
 
