@@ -5,7 +5,7 @@
     //  var points = null; // 页码数
 
     var isFirstRender = [true, true, true, true, true, true];
-    var setPosition = [2095, 2145, 4928, 4958, 7761, 7811];
+    var setPosition = [1995, 2145, 4828, 4958, 7661, 7811];
 
 
     //- 设置html标签font-size
