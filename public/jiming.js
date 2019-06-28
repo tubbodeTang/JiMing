@@ -4,6 +4,9 @@
     //  var pageNow = 1;   // 当前页码
     //  var points = null; // 页码数
 
+    var isFirstRender = [true, true, true, true, true, true];
+    var setPosition = [2095, 2145, 4928, 4958, 7761, 7811];
+
 
     //- 设置html标签font-size
     var _root = document.documentElement,
@@ -44,14 +47,11 @@
         bindBtnClick: function () {
             btn.addEventListener('touchstart', function () {
                 modal.className = "modal show";
-                console.log('touch');
             })
 
             btnclose.addEventListener('touchstart', function () {
                 modal.className = "modal hide";
-                console.log('touch');
             })
-
         },
 
 
@@ -59,7 +59,23 @@
         transform: function (translate) {
             this.style.webkitTransform = 'translate3d(0, ' + translate + 'px, 0)';
             currentPosition = translate;
+        },
 
+
+        // 对话
+        showConversation: function (setNum, pageHeight) {
+            if (currentPosition <= -pageHeight - setPosition[setNum - 1] + 100) {
+                if (isFirstRender[setNum - 1]) {
+                    var conver = document.querySelector('#conver_' + setNum);
+                    var img = conver.children;
+                    img[0].className = "show";
+                    setInterval(() => {
+                        img[0].className = "hide";
+                        img[1].className = "show";
+                    }, 1500)
+                    isFirstRender[setNum - 1] = false;
+                }
+            }
         },
 
         /**
@@ -131,12 +147,20 @@
                 direction = deltaY > 0 ? 'top' : 'bottom'; // 判断手指滑动的方向
 
 
+                //按钮显示
                 if (currentPosition <= -pageHeight) {
-                    debugger;
                     btn.className = "show btn";
                 } else {
                     btn.className = "hide btn";
                 }
+
+                // //对话位置
+                // this.showConversation(1, pageHeight)
+                // this.showConversation(2, pageHeight)
+                // this.showConversation(3, pageHeight)
+                // this.showConversation(4, pageHeight)
+                // this.showConversation(5, pageHeight)
+                // this.showConversation(6, pageHeight)
 
             }.bind(this), false);
 
@@ -191,12 +215,23 @@
                         translate = translate < maxHeight + pageHeight ? maxHeight + pageHeight : translate;
                     }
 
+                    //按钮显示
                     if (currentPosition <= -pageHeight) {
-                        debugger;
                         btn.className = "show btn";
                     } else {
                         btn.className = "hide btn";
                     }
+
+
+                    //对话位置
+                    this.showConversation(1, pageHeight)
+                    this.showConversation(2, pageHeight)
+                    this.showConversation(3, pageHeight)
+                    this.showConversation(4, pageHeight)
+                    this.showConversation(5, pageHeight)
+                    this.showConversation(6, pageHeight)
+
+
 
                     // 执行滑动，让页面完整的显示到屏幕上
                     this.transform.call(viewport, translate);
