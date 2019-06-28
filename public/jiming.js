@@ -31,20 +31,28 @@
             }
             document.addEventListener('DOMContentLoaded', function () {
                 //  points = document.querySelectorAll('.pagenumber div');
+                btn = document.querySelector('#panelBtn');
+                btnclose = document.querySelector('#btnclose');
+                modal = document.querySelector('#modal');
                 app.bindTouchEvent(); // 绑定触摸事件
-                //  app.bindBtnClick();   // 绑定按钮点击事件
+                app.bindBtnClick();   // 绑定按钮点击事件
                 //   app.setPageNow();     // 设置初始页码
             }.bind(app), false);
         }(),
 
 
-        // bindBtnClick: function () {
-        //     var button = document.querySelector('#testbtn');
-        //     button.addEventListener('touchstart', function () {
-        //         console.log('touch');
-        //     })
+        bindBtnClick: function () {
+            btn.addEventListener('touchstart', function () {
+                modal.className = "modal show";
+                console.log('touch');
+            })
 
-        // },
+            btnclose.addEventListener('touchstart', function () {
+                modal.className = "modal hide";
+                console.log('touch');
+            })
+
+        },
 
 
         // 页面平移
@@ -71,10 +79,8 @@
         bindTouchEvent: function () {
             var viewport = document.querySelector('#viewport');
             var pageHeight = window.innerHeight; // 页面高度
-            debugger;
             // var maxHeight = - pageHeight * (points.length - 1); // 页面滑动最后一页的位置
-            var maxHeight = - viewport.clientHeight;
-            debugger; // 页面滑动最后一页的位置
+            var maxHeight = - viewport.clientHeight; // 页面滑动最后一页的位置
             var startX, startY;
             var initialPos = 0;  // 手指按下的屏幕位置
             var moveLength = 0;  // 手指当前滑动的距离
@@ -123,6 +129,15 @@
                 isMove = true;
                 moveLength = deltaY;
                 direction = deltaY > 0 ? 'top' : 'bottom'; // 判断手指滑动的方向
+
+
+                if (currentPosition <= -pageHeight) {
+                    debugger;
+                    btn.className = "show btn";
+                } else {
+                    btn.className = "hide btn";
+                }
+
             }.bind(this), false);
 
             // 手指离开屏幕时，计算最终需要停留在哪一页
@@ -174,6 +189,13 @@
                         translate = translate > 0 ? 0 : translate;
                         // 下边界
                         translate = translate < maxHeight + pageHeight ? maxHeight + pageHeight : translate;
+                    }
+
+                    if (currentPosition <= -pageHeight) {
+                        debugger;
+                        btn.className = "show btn";
+                    } else {
+                        btn.className = "hide btn";
                     }
 
                     // 执行滑动，让页面完整的显示到屏幕上

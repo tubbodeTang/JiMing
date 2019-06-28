@@ -11,103 +11,120 @@
 
 <body>
     <div class="container">
+        <button id="panelBtn" class="btn hide">
+
+        </button>
+
+        <div id="modal" class="modal hide">
+            <button id="btnclose" class="btnclose">
+                ✖
+            </button>
+        </div>
+
         <div id="viewport" class="viewport">
 
+            <div class="loading" style="height:100vh;">
 
-            <div class="gif" style="    top: 902px;
+            </div>
+
+            <div class="content">
+                <div class="gif" style="top: calc(902px + 100vh);
             right: 38px;">
-                <img style="height: 100px;width: 100px;" src="/images/1_chicken.gif">
-            </div>
-            <div class="gif" style="top: 2319px;
+                    <img style="height: 100px;width: 100px;" src="/images/1_chicken.gif">
+                </div>
+                <div class="gif" style="top: calc( 2319px + 100vh);
             right: 0px;">
-                <img style="    height: 225px;
+                    <img style="    height: 225px;
                 width: 362px;" src="/images/1_husb.gif">
-            </div>
-            <div class="gif" style="top: 2168px;
+                </div>
+                <div class="gif" style="top: calc(2168px + 100vh);
             right: 70px;">
-                <img style="    height: 208px;
+                    <img style="    height: 208px;
                 width: 222px;" src="/images/1_wife.gif">
-            </div>
-            <div class="gif" style="    top: 1418px;
+                </div>
+                <div class="gif" style="    top: calc(1418px + 100vh);
             left: 177px;">
-                <img style="    height: 176px;
+                    <img style="    height: 176px;
                 width: 78px;" src="/images/1_follower.gif">
-            </div>
+                </div>
 
-            <div class="pageview" style="background:url('/images/background.jpg') no-repeat 0 0 ">
-                <h3>页面-1</h3>
-                <!-- <img style="height:100%;width:100%" src="./img/background.jpg"> -->
-                <button id="testbtn" style="display:none"></button>
-            </div>
-            <div class="pageview" style="background:url('/images/background.jpg') no-repeat 0 0 ">
-                <h3>页面-2</h3>
-                <!-- <img style="height:100%;width:100%" src="./img/background.jpg"> -->
-            </div>
-            <!-- style="background:url('./img/background.jpg') no-repeat 0 0 " -->
-            <div class="pageview" style="background:url('/images/background.jpg') no-repeat 0 0 ">
-                <h3>页面-3</h3>
-                <!-- <img style="height:100%;width:100%" src="./img/background.jpg"> -->
-            </div>
-
-
+                <div class="pageview" style="background:url('/images/bg1.jpg') no-repeat 0 0 ">
+                    <!-- <h3>页面-1</h3> -->
+                    <!-- <img style="height:100%;width:100%" src="./img/background.jpg"> -->
+                    <!-- <button id="testbtn" style="display:none"></button> -->
+                </div>
+                <div class="pageview" style="background:url('/images/bg2.jpg') no-repeat 0 0 ">
+                    <!-- <h3>页面-2</h3> -->
+                    <!-- <img style="height:100%;width:100%" src="./img/background.jpg"> -->
+                </div>
+                <!-- style="background:url('./img/background.jpg') no-repeat 0 0 " -->
+                <div class="pageview" style="background:url('/images/bg3.jpg') no-repeat 0 0 ">
+                    <!-- <h3>页面-3</h3> -->
+                    <!-- <img style="height:100%;width:100%" src="./img/background.jpg"> -->
+                </div>
 
 
 
-            <div class="gif" style="    top: 3735px;
+
+
+                <div class="gif" style="    top: calc( 3735px + 100vh);
             right: 38px;">
-                <img style="height: 100px;width: 100px;" src="/images/1_chicken.gif">
-            </div>
-            <div class="gif" style="top: 5152px;
+                    <img style="height: 100px;width: 100px;" src="/images/2_chicken.gif">
+                </div>
+                <div class="gif" style="top: calc(5152px + 100vh);
             right: 0px;">
-                <img style="    height: 225px;
+                    <img style="    height: 225px;
                 width: 362px;" src="/images/1_husb.gif">
-            </div>
-            <div class="gif" style="top: 5001px;
+                </div>
+                <div class="gif" style="top: calc(5001px + 100vh);
             right: 70px;">
-                <img style="    height: 208px;
+                    <img style="    height: 208px;
                 width: 222px;" src="/images/1_wife.gif">
-            </div>
-            <div class="gif" style="    top: 4251px;
+                </div>
+                <div class="gif" style="    top: calc(4251px + 100vh);
             left: 177px;">
-                <img style="    height: 176px;
+                    <img style="    height: 176px;
                 width: 78px;" src="/images/1_follower.gif">
-            </div>
+                </div>
 
 
 
-            <div class="gif" style="    top: 6568px;
+                <div class="gif" style="    top: calc(6568px + 100vh);
             right: 38px;">
-                <img style="height: 100px;width: 100px;" src="/images/1_chicken.gif">
-            </div>
-            <div class="gif" style="top: 7985px;
+                    <img style="height: 100px;width: 100px;" src="/images/1_chicken.gif">
+                </div>
+                <div class="gif" style="top: calc(7985px + 100vh);
             right: 0px;">
-                <img style="    height: 225px;
+                    <img style="    height: 225px;
                 width: 362px;" src="/images/1_husb.gif">
-            </div>
-            <div class="gif" style="top: 7834px;
+                </div>
+                <div class="gif" style="top: calc(7834px + 100vh);
             right: 70px;">
-                <img style="    height: 208px;
+                    <img style="    height: 208px;
                 width: 222px;" src="/images/1_wife.gif">
-            </div>
-            <div class="gif" style="    top: 7084px;
+                </div>
+                <div class="gif" style="    top: calc(7084px + 100vh);
             left: 177px;">
-                <img style="    height: 176px;
+                    <img style="    height: 176px;
                 width: 78px;" src="/images/1_follower.gif">
+                </div>
+
+
             </div>
-            
+
+
+
 
         </div>
 
 
 
 
-        <div class="pagenumber">
+        <!-- <div class="pagenumber">
             <div></div>
             <div></div>
             <div></div>
-            <!-- <div></div> -->
-            <!-- <div></div> -->
-        </div>
+        </div> -->
     </div>
 </body>
 
